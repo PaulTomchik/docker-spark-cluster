@@ -1,0 +1,28 @@
+version: '2'
+services:
+    master:
+        #build: ./imageBuildDir
+      image: paultomchik/spark-cluster
+      container_name: hadoop_master
+      environment:
+        - CLUSTER_ROLE=master
+      hostname: master
+      volumes:
+        - ./data/master-data/:/data/
+      links:
+        - slave1
+        - slave2
+    slave1:
+        #build: ./imageBuildDir
+      image: paultomchik/spark-cluster
+      container_name: hadoop_slave1
+      hostname: slave1
+      volumes:
+        - ./data/slave1-data/:/data/
+    slave2:
+        #build: ./imageBuildDir
+      image: paultomchik/spark-cluster
+      container_name: hadoop_slave2
+      hostname: slave2
+      volumes:
+        - ./data/slave2-data/:/data/
