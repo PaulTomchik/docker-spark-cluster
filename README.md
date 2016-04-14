@@ -7,6 +7,9 @@ https://github.com/PaulTomchik/docker-hadoop-cluster
 
 It too is a based almost entirely on the sequenceiq repo/image.
 
+Available on Docker Hub:
+`docker pull paultomchik/spark-cluster`
+
 To start the cluster:
     `./startCluster.sh`
 
